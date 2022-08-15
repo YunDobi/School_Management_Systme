@@ -4,6 +4,7 @@ public class Teacher {
     private int id;
     private String name;
     private int salary;
+    private int income = 0;
 
     /**
      * constructure
@@ -31,5 +32,23 @@ public class Teacher {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    /**
+     * how much receive the salary
+     * @param salary: int
+     */
+    public void receiveSalary(int salary) {
+        income += salary;
+        School.updateTotalSpent(income);
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Teacher's name='" + name + '\'' +
+                ", salary=" + salary +
+                ", income=" + income +
+                '}';
     }
 }
