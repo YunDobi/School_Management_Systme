@@ -26,3 +26,6 @@ school object will contain down below data
     -grade
     -fees paid
     -fees total
+
+## Result
+![](../../Screen Shot 2022-08-14 at 7.41.47 PM.png)
