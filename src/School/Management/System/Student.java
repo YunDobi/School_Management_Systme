@@ -32,10 +32,47 @@ public class Student {
 
     /**
      * keep adding the fees to the feedsPaid
-     * @param feesPaid: int of feeds of student
+     * @param fees: int of feeds of student
      */
-    public void updateFeesPaid(int fee) {
-        feesPaid = feesPaid + fee;
+    public void payFees(int fees) {
+        feesPaid += fees;
+        School.updateTotalEarned(feesPaid);
+        System.out.println(name + " pay " + fees + ", and totally paid " + feesPaid);
     }
 
+    /**
+     * getter of the Student
+     */
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public int getFeesPaid() {
+        return feesPaid;
+    }
+
+    public int getFeesTotal() {
+        return feesTotal;
+    }
+
+    public int getRemindFees() {
+        return feesTotal - feesPaid;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Student's name is '" + name + '\'' +
+                ", grade=" + grade +
+                ", feesPaid=" + feesPaid +
+                ", feesTotal=" + feesTotal;
+    }
 }
